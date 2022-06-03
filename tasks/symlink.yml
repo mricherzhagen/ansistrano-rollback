@@ -2,5 +2,5 @@
 - name: ANSISTRANO | Change symlink from current release to a previous one
   file:
     state: link
-    path: "{{ ansistrano_deploy_to }}/{{ ansistrano_current_dir }}"
-    src: "./{{ ansistrano_version_dir }}/{{ ansistrano_rollback_release_version }}"
+    path: "{{ ansistrano_current_path }}"
+    src: "{{ (ansistrano_releases_path.stdout ~ '/' ~ ansistrano_rollback_release_version) | relpath(ansistrano_current_path | dirname) }}"

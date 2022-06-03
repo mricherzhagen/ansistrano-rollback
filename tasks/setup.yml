@@ -1,6 +1,6 @@
 ---
 - name: ANSISTRANO | Get releases path
-  command: echo "{{ ansistrano_deploy_to }}/{{ ansistrano_version_dir }}"
+  command: echo "{{ ansistrano_releases_path }}"
   check_mode: no
   register: ansistrano_releases_path
 
